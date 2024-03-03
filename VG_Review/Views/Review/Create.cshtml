@@ -1,0 +1,27 @@
+﻿@model Review
+
+<h2>Add a Review</h2>
+
+<form asp-action="Create" asp-controller="Review">
+    <input type="hidden" asp-for="GameId" />
+    <div>
+        <label asp-for="ReviewTitle"></label>
+        <input asp-for="ReviewTitle" />
+    </div>
+    <div>
+        <label asp-for="Content"></label>
+        <input asp-for="Content" />
+    </div>
+    <div>
+        <label asp-for="Rating"></label>
+        <select asp-for="Rating">
+            <option value="">Select a rating</option>
+            <option value="1">★</option>
+            <option value="2">★★</option>
+            <option value="3">★★★</option>
+            <option value="4">★★★★</option>
+            <option value="5">★★★★★</option>
+        </select>
+    </div>
+    <input type="submit" value="Add Review" />
+</form>
