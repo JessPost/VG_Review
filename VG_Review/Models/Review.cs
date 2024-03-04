@@ -1,4 +1,6 @@
-﻿namespace VG_Review.Models
+﻿using VG_Review.Areas.Identity.Data;
+
+namespace VG_Review.Models
 {
     public class Review
     {

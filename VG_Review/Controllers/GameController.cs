@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using VG_Review.Areas.Identity.Data;
 using VG_Review.Models;
@@ -8,20 +10,43 @@ namespace VG_Review.Controllers
     public class GameController : Controller
     {
         private readonly VG_ReviewContext _db;
+        private readonly UserManager<User> _userManager;
 
-        public GameController(VG_ReviewContext db)
+        public GameController(VG_ReviewContext db, UserManager<User> userManager)
         {
             _db = db;
+            _userManager = userManager;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult>  Index()
         {
             var getGames = _db.Games.ToList();
+            var user = await _userManager.GetUserAsync(User);
+
+            if (user != null)
+            {
+                ViewBag.FirstName = user.FirstName;
+            }
+            else
+            {
+                ViewBag.FirstName = "Guest";
+            }   
             return View(getGames);
         }
 
+        //[Authorize]
         public async Task<IActionResult> Details(int? id)
         {
+            var user = await _userManager.GetUserAsync(User);
+            if (user != null)
+            {
+                ViewBag.FirstName = user.FirstName;
+            }
+            else
+            {
+                ViewBag.FirstName = "Guest";
+            }
+
             if (id == null)
             {
                 return NotFound();
@@ -37,9 +62,19 @@ namespace VG_Review.Controllers
             return View(game);
         }
 
+        //[Authorize]
         [HttpGet]
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            var user = await _userManager.GetUserAsync(User);
+            if (user != null)
+            {
+                ViewBag.FirstName = user.FirstName;
+            }
+            else
+            {
+                ViewBag.FirstName = "Guest";
+            }
             return View();
         }
         [HttpPost]
@@ -54,9 +89,20 @@ namespace VG_Review.Controllers
             return View(game);
         }
 
+        //[Authorize]
         [HttpGet]
         public async Task<IActionResult> Edit(int? id)
         {
+            var user = await _userManager.GetUserAsync(User);
+            if (user != null)
+            {
+                ViewBag.FirstName = user.FirstName;
+            }
+            else
+            {
+                ViewBag.FirstName = "Guest";
+            }
+
             if (id == null)
             {
                 return RedirectToAction("Details");
@@ -79,9 +125,20 @@ namespace VG_Review.Controllers
             return View(game);
         }
 
+        //[Authorize]
         [HttpGet]
         public async Task<IActionResult> Delete(int? id)
         {
+            var user = await _userManager.GetUserAsync(User);
+            if (user != null)
+            {
+                ViewBag.FirstName = user.FirstName;
+            }
+            else
+            {
+                ViewBag.FirstName = "Guest";
+            }
+
             if (id == null)
             {
                 return RedirectToAction("Index");
