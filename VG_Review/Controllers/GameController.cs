@@ -18,7 +18,7 @@ namespace VG_Review.Controllers
             _userManager = userManager;
         }
 
-        public async Task<IActionResult>  Index()
+        public async Task<IActionResult> Index(string title)
         {
             var getGames = _db.Games.ToList();
             var user = await _userManager.GetUserAsync(User);
@@ -30,7 +30,14 @@ namespace VG_Review.Controllers
             else
             {
                 ViewBag.FirstName = "Guest";
-            }   
+            }
+
+            if (!string.IsNullOrEmpty(title))
+            {
+                getGames = getGames.Where(x => x.Title.ToLower().Contains(title.ToLower())).ToList();
+                ViewBag.IsSearchPerformed = true;
+            }
+
             return View(getGames);
         }
 

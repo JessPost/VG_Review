@@ -5,51 +5,87 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>List of Games</h1>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <h1 class="display-4 mt-5 mb-5"><strong>List of Games</strong></h1>
+        </div>
+    </div>
+</div>
 
-<p>
-    <a asp-action="Create">Add Game to List</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Genre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Developer)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Genre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Developer)
-                </td>
-                <td>
-                    <a asp-action="Details" asp-route-id="@item.GameId">See Game Reviews</a> |
-                    <a asp-action="Edit" asp-route-id="@item.GameId">Edit Game Info</a> |
-                    <a asp-action="Delete" asp-route-id="@item.GameId">Delete This Game</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+<div class="container mb-4">
+    <div class="row">
+        <div class="col-md-6">
+            <a asp-action="Create" class="btn btn-info btn-sm">Add Game</a>
+        </div>
+        <div class="col-md-6">
+            <form asp-action="Index" method="get" class="d-flex">
+                <div class="input-group me-2">
+                    <input type="text" name="title" class="form-control" placeholder="Search for Game Title" />
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+                @if (ViewBag.IsSearchPerformed == true)
+                {
+                    <a asp-action="Index" class="btn btn-secondary">Go Back</a>
+                }
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="table-responsive">
+        <table class="table table-hover table-borderless table-dark">
+            <thead>
+                <tr>
+                    <th class="table-info">
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th class="table-info">
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th class="table-info">
+                        @Html.DisplayNameFor(model => model.Genre)
+                    </th>
+                    <th class="table-info">
+                        @Html.DisplayNameFor(model => model.Developer)
+                    </th>
+                    <th class="table-info">
+                        @Html.DisplayNameFor(model => model.Price)
+                    </th>
+                    <th class="table-info">
+                        Actions:
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Genre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Developer)
+                        </td>
+                        <td>
+                            $@Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.GameId" class="btn btn-primary">See Game Reviews</a>
+                            <a asp-action="Edit" asp-route-id="@item.GameId" class="btn btn-warning">Edit Game Info</a>
+                            <a asp-action="Delete" asp-route-id="@item.GameId" class="btn btn-danger">Delete This Game</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -2,7 +2,21 @@
     ViewData["Title"] = "Home Page";
 }
 
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="text-center">
+        <a class="nav-link text-dark" id="login" asp-controller="Game" asp-action="Index"><h2 class="display-8"><strong><u>Click to See Our List of Games</u></strong></h2></a>
+        <img src="~/images/carl-raw-8gdayy2lhi0-unsplash.jpg" />
+    </div>
+}
+@if (!User.Identity.IsAuthenticated)
+{
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h2 class="display-7"><strong>Welcome To Our Video Game Review Site</strong></h2>
+    <a class="nav-link text-dark" id="login" href="/Identity/Account/Login"><p><strong><u>Click To Enter Here</u></strong></p></a>
+    @*     <h1 class="display-4"><strong><u>Our Video Game Review Site</u></strong></h1> *@
+    <img src="~/images/carl-raw-8gdayy2lhi0-unsplash.jpg" />
 </div>
+}
+
+
