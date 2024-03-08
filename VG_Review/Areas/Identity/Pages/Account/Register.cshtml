@@ -6,9 +6,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <section class="login-section bg-custom p-3 rounded shadow">
+            <section class="login-section bg-warning-subtle p-3 rounded shadow">
                 <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-                    <h2 class="text-center mb-4">Please Create a New Account!</h2>
+                    <h2 class="text-center text-dark-emphasis mb-4">Please Create a New Account!</h2>
                     <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
                     <div class="form-floating mb-3">
@@ -43,7 +43,7 @@
                         <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
                     </div>
                     <div class="text-center">
-                        <button id="registerSubmit" type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+                        <button id="registerSubmit" type="submit" class="btn btn-warning btn-lg btn-block">Register</button>
                     </div>
                 </form>
             </section>

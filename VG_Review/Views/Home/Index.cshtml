@@ -5,16 +5,15 @@
 @if (User.Identity.IsAuthenticated)
 {
     <div class="text-center">
-        <a class="nav-link text-dark" id="login" asp-controller="Game" asp-action="Index"><h2 class="display-8"><strong><u>Click to See Our List of Games</u></strong></h2></a>
+        <a class="nav-link" id="login" asp-controller="Game" asp-action="Index"><h2 class="display-8 welcome"><strong><u>See Our List of Games Here!</u></strong></h2></a>
         <img src="~/images/carl-raw-8gdayy2lhi0-unsplash.jpg" />
     </div>
 }
 @if (!User.Identity.IsAuthenticated)
 {
 <div class="text-center">
-    <h2 class="display-7"><strong>Welcome To Our Video Game Review Site</strong></h2>
-    <a class="nav-link text-dark" id="login" href="/Identity/Account/Login"><p><strong><u>Click To Enter Here</u></strong></p></a>
-    @*     <h1 class="display-4"><strong><u>Our Video Game Review Site</u></strong></h1> *@
+    <h2 class="display-7 welcome"><strong>Welcome To Our Video Game Review Site</strong></h2>
+    <a class="nav-link" id="login" href="/Identity/Account/Login"><p><strong><u>Click To See Games</u></strong></p></a>
     <img src="~/images/carl-raw-8gdayy2lhi0-unsplash.jpg" />
 </div>
 }

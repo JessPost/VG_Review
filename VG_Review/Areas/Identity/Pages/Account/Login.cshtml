@@ -5,9 +5,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <section class="login-section bg-custom p-4 rounded shadow">
+            <section class="login-section bg-warning-subtle p-4 rounded shadow">
                 <form id="account" method="post" class="login-form">
-                    <h2 class="text-center mb-4">Welcome Back!</h2>
+                    <h2 class="text-center text-dark-emphasis mb-4">Welcome Back!</h2>
                     <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
                     <div class="form-floating mb-3">
                         <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="Email">
@@ -24,7 +24,7 @@
                         <label class="form-check-label" asp-for="Input.RememberMe">Remember me</label>
                     </div>
                     <div class="text-center">
-                        <button id="login-submit" type="submit" class="btn btn-primary">Log in</button>
+                        <button id="login-submit" type="submit" class="btn btn-warning">Log in</button>
                     </div>
                     <div class="mt-4 text-center">
                         <p><a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a></p>
