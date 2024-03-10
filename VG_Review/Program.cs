@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using VG_Review.Areas.Identity.Data;
+using Microsoft.AspNetCore.Identity.UI.Services;
+
+
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("VG_ReviewContextConnection") ?? throw new InvalidOperationException("Connection string 'VG_ReviewContextConnection' not found.");
 
