@@ -5,10 +5,11 @@
         <div class="col-md-8">
             <div class="card border-5 shadow">
                 <div class="card-body">
-                    <h2 class="card-title display-5">@Model.Title</h2>
-                    <p class="card-text">Description: @Model.Description</p>
-                    <p class="card-text">Genre: @Model.Genre</p>
-                    <p class="card-text">Developer: @Model.Developer</p>
+                    <h2 class="card-title display-5"><i>"@Model.Title"</i></h2>
+                    <p class="card-text"><strong><u>Description:</u></strong> &ensp;@Model.Description</p>
+                    <p class="card-text"><strong><u>Genre:</u></strong> &ensp;@Model.Genre</p>
+                    <p class="card-text"><strong><u>Developer:</u></strong> &ensp;@Model.Developer</p>
+                    <p class="card-text"><strong><u>Price:</u></strong> &ensp;$@Model.Price</p>
                     <hr/>
 
                     <h4 class="mt-4 text-center text-muted"><u>Reviews:</u></h4>
@@ -19,15 +20,16 @@
                         {
                             <div class="card mb-2 border-2 shadow">
                                 <div class="card-body">
+                                    <h5 class="card-text"></h5>
                                     <p class="card-text">@review.Content</p>
                                     <p class="card-text">
-                                        Rating:
+                                        <strong>Rating:</strong>
                                         @for (int i = 0; i < review.Rating; i++)
                                         {
                                             <text>★</text>
                                         }
                                     </p>
-                                    <p class="card-text">Review Date: @review.DateTime.ToString("d")</p>        
+                                    <p class="card-text"><strong>Review Date:</strong> @review.DateTime.ToString("d")</p>
                                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                         <a asp-action="Edit" asp-controller="Review" asp-route-id="@review.ReviewId" class="btn btn-warning"><i class="bi bi-pencil"></i> This Review</a>
                                         <a asp-action="Delete" asp-controller="Review" asp-route-id="@review.ReviewId" class="btn btn-danger"><i class="bi bi-trash3"></i> This Review</a>
