@@ -1,28 +1,41 @@
 ﻿@model Review
 
-<h2>Add a Review</h2>
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h2 class="card-title text-center">Add a Review</h2>
 
-<form asp-action="Create" asp-controller="Review">
-    <input type="hidden" asp-for="GameId" />
-    <div>
-        <label asp-for="ReviewTitle"></label>
-        <input asp-for="ReviewTitle" />
+                    <form asp-action="Create" asp-controller="Review">
+                        <input type="hidden" asp-for="GameId" />
+                        <div class="mb-3">
+                            <label for="ReviewTitle" class="form-label">Review Title</label>
+                            <input asp-for="ReviewTitle" class="form-control" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Content" class="form-label">Content</label>
+                            <textarea asp-for="Content" class="form-control" rows="5"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Rating" class="form-label">Rating</label>
+                            <select asp-for="Rating" class="form-select">
+                                <option value="">Select a rating</option>
+                                <option value="1">★</option>
+                                <option value="2">★★</option>
+                                <option value="3">★★★</option>
+                                <option value="4">★★★★</option>
+                                <option value="5">★★★★★</option>
+                            </select>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" value="Create" class="btn btn-success mt-3 mb-2"><i class="bi bi-plus-square"></i> Add Review</button>
+                            <a asp-controller="Game" asp-action="Details" asp-route-id="@Model.GameId" class="btn btn-info"><i class="bi bi-arrow-left-circle"></i> Back to List of Games</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    <div>
-        <label asp-for="Content"></label>
-        <input asp-for="Content" />
-    </div>
-    <div>
-        <label asp-for="Rating"></label>
-        <select asp-for="Rating">
-            <option value="">Select a rating</option>
-            <option value="1">★</option>
-            <option value="2">★★</option>
-            <option value="3">★★★</option>
-            <option value="4">★★★★</option>
-            <option value="5">★★★★★</option>
-        </select>
-    </div>
-    <input type="submit" value="Add Review" />
-    <a asp-controller="Game" asp-action="Details" asp-route-id="@Model.GameId">Go Back</a>
-</form>
+</div>
+
