@@ -20,6 +20,5 @@ namespace VG_Review.Models
 
         public int GameId { get; set; }
         public Game Game { get; set; }
-        public string UserId { get; set; }
     }
 }
