@@ -9,27 +9,16 @@ namespace VG_Review.Controllers
     public class ReviewController : Controller
     {
         private readonly VG_ReviewContext _db;
-        private readonly UserManager<User> _userManager;
 
-        public ReviewController(VG_ReviewContext db, UserManager<User> userManager)
+        public ReviewController(VG_ReviewContext db)
         {
             _db = db;
-            _userManager = userManager;
         }
 
         //[Authorize]
         [HttpGet]
         public async Task<IActionResult> Create(int gameId)
         {
-            var user = await _userManager.GetUserAsync(User);
-            if (user != null)
-            {
-                ViewBag.FirstName = user.FirstName;
-            }
-            else
-            {
-                ViewBag.FirstName = "Guest";
-            }
             var review = new Review { GameId = gameId };
             return View(review);
         }
@@ -37,15 +26,6 @@ namespace VG_Review.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Review review)
         {
-            var user = await _userManager.GetUserAsync(User);
-            if (user != null)
-            {
-                ViewBag.FirstName = user.FirstName;
-            }
-            else
-            {
-                ViewBag.FirstName = "Guest";
-            }
             if (ModelState.IsValid)
             {
                 review.DateTime = DateTime.Now;
@@ -62,15 +42,6 @@ namespace VG_Review.Controllers
         public async Task<IActionResult> Edit(int id)
         {
             var review = await _db.Reviews.FindAsync(id);
-            var user = await _userManager.GetUserAsync(User);
-            if (user != null)
-            {
-                ViewBag.FirstName = user.FirstName;
-            }
-            else
-            {
-                ViewBag.FirstName = "Guest";
-            }
 
             if (review == null)
             {
@@ -105,15 +76,6 @@ namespace VG_Review.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             var review = await _db.Reviews.FindAsync(id);
-            var user = await _userManager.GetUserAsync(User);
-            if (user != null)
-            {
-                ViewBag.FirstName = user.FirstName;
-            }
-            else
-            {
-                ViewBag.FirstName = "Guest";
-            }
 
             if (review == null)
             {
