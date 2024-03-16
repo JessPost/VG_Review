@@ -8,11 +8,22 @@ html {
     }
 }
 
+.footer {
+    padding: 1rem;
+}
+
+@media (max-width: 600px) {
+    .footer {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+}
+
 .navbar {
     background-color: #8da4c9;
 }
 
-.nav-link{
+.nav-link {
     color: aqua;
 }
 
@@ -22,7 +33,7 @@ html {
     font-family: "Ubuntu", sans-serif;
     font-weight: 500;
     font-style: normal;
-} 
+}
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
@@ -44,4 +55,12 @@ img {
 
 .bg-custom {
     background-color: #e6e6e6;
+}
+
+p.mb-0 {
+    margin-bottom: 0;
+}
+
+p.mt-0 {
+    margin-top: 0;
 }
