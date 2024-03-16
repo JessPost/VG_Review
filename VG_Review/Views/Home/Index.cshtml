@@ -1,12 +1,8 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
-@if (User.Identity.IsAuthenticated)
+﻿@if (User.Identity.IsAuthenticated)
 {
     <div class="text-center">
         <a class="nav-link" id="login" asp-controller="Game" asp-action="Index"><h2 class="display-8 welcome"><strong><u>See Our List of Games Here!</u></strong></h2></a>
-        <img src="~/images/carl-raw-8gdayy2lhi0-unsplash.jpg" />
+        <img class="img-fluid" src="~/images/carl-raw-8gdayy2lhi0-unsplash.jpg" />
     </div>
 }
 @if (!User.Identity.IsAuthenticated)
@@ -14,8 +10,6 @@
 <div class="text-center">
     <h2 class="display-7 welcome"><strong>Welcome To Our Video Game Review Site</strong></h2>
     <a class="nav-link" id="login" href="/Identity/Account/Login"><p><strong><u>Click To See Games</u></strong></p></a>
-    <img src="~/images/carl-raw-8gdayy2lhi0-unsplash.jpg" />
+    <img class="img-fluid" src="~/images/carl-raw-8gdayy2lhi0-unsplash.jpg" />
 </div>
 }
-
-
