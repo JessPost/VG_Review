@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("VG_ReviewContextConnection") ?? throw new InvalidOperationException("Connection string 'VG_ReviewContextConnection' not found.");
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'VG_ReviewContextConnection' not found.");
 
 builder.Services.AddDbContext<VG_ReviewContext>(options =>
     options.UseSqlServer(connectionString));
