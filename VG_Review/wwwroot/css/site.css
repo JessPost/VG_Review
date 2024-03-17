@@ -8,16 +8,6 @@ html {
     }
 }
 
-/*.footer {
-    padding: 1rem;
-}
-
-@media (max-width: 600px) {
-    .footer {
-        font-size: 0.8rem;
-        padding: 0.5rem;
-    }
-}*/
 .footer .row,
 .footer [class*='col-'] {
     margin: 0;
@@ -29,6 +19,11 @@ html {
     margin-bottom: 0;
 }
 
+    .footer-text .line {
+        display: block;
+        line-height: 1.2; /* adjust as needed */
+    }
+
 @media (max-width: 390px) {
     .row {
         display: flex;
@@ -39,7 +34,6 @@ html {
         font-size: 0.6em;
     }
 }
-
 
 .navbar {
     background-color: #8da4c9;
