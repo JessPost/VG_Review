@@ -18,9 +18,15 @@ html {
         padding: 0.5rem;
     }
 }*/
+.footer .row,
+.footer [class*='col-'] {
+    margin: 0;
+    padding: 0;
+}
+
 .footer-text {
-    font-size: 0.8em; 
-    margin-bottom: 0; 
+    font-size: 1em;
+    margin-bottom: 0;
 }
 
 @media (max-width: 390px) {
