@@ -23,13 +23,12 @@ namespace VG_Review.Controllers
             if (!string.IsNullOrEmpty(title))
             {
                 getGames = getGames.Where(x => x.Title.ToLower().Contains(title.ToLower())).ToList();
-                //ViewBag.IsSearchPerformed = true;
             }
 
             return View(getGames);
         }
 
-        //[Authorize]
+        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -47,7 +46,7 @@ namespace VG_Review.Controllers
             return View(game);
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> Create()
         {
@@ -65,7 +64,7 @@ namespace VG_Review.Controllers
             return View(game);
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> Edit(int? id)
         {
@@ -91,7 +90,7 @@ namespace VG_Review.Controllers
             return View(game);
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> Delete(int? id)
         {

@@ -15,7 +15,7 @@ namespace VG_Review.Controllers
             _db = db;
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> Create(int gameId)
         {
@@ -37,7 +37,7 @@ namespace VG_Review.Controllers
             return View(review);
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
@@ -71,7 +71,7 @@ namespace VG_Review.Controllers
             return View(review);
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {

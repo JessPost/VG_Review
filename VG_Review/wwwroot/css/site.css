@@ -21,7 +21,7 @@ html {
 
     .footer-text .line {
         display: block;
-        line-height: 1.2; /* adjust as needed */
+        line-height: 1.2;
     }
 
 @media (max-width: 390px) {

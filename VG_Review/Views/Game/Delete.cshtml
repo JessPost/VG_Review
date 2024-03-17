@@ -6,7 +6,6 @@
             <div class="card border-5 shadow">
                 <div class="card-body">
                     <h1 class="card-title text-center">Delete This Game</h1>
-
                     <div>
                         <hr />
                         <dl class="row">
@@ -23,7 +22,6 @@
                                 @Html.DisplayFor(model => model.Description)
                             </dd>
                         </dl>
-
                         <form asp-action="Delete" class="mt-4">
                             <input type="hidden" asp-for="GameId" />
                             <div class="d-grid">

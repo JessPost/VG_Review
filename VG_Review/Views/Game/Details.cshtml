@@ -10,10 +10,8 @@
                     <p class="card-text"><strong><u>Genre:</u></strong> &ensp;@Model.Genre</p>
                     <p class="card-text"><strong><u>Developer:</u></strong> &ensp;@Model.Developer</p>
                     <p class="card-text"><strong><u>Price:</u></strong> &ensp;$@Model.Price</p>
-                    <hr/>
-
+                    <hr />
                     <h4 class="mt-4 text-center text-muted"><u>Reviews:</u></h4>
-
                     @if (Model.Reviews != null && Model.Reviews.Any())
                     {
                         foreach (var review in Model.Reviews)
@@ -34,7 +32,6 @@
                                         <a asp-action="Edit" asp-controller="Review" asp-route-id="@review.ReviewId" class="btn btn-warning"><i class="bi bi-pencil"></i> This Review</a>
                                         <a asp-action="Delete" asp-controller="Review" asp-route-id="@review.ReviewId" class="btn btn-danger"><i class="bi bi-trash3"></i> This Review</a>
                                     </div>
-
                                 </div>
                             </div>
                         }
@@ -47,7 +44,6 @@
                             </div>
                         </div>
                     }
-
                     <div class="mt-4 d-flex justify-content-center">
                         <a asp-controller="Review" asp-action="Create" asp-route-gameId="@Model.GameId" class="btn btn-success me-4"><i class="bi bi-plus-square"></i> Review This Game</a>
                         <a asp-action="Index" class="btn btn-info "><i class="bi bi-arrow-left-circle"></i> Back to List of Games</a>
