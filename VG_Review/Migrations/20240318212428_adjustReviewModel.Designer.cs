@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VG_Review.Areas.Identity.Data;
 
@@ -11,9 +12,10 @@ using VG_Review.Areas.Identity.Data;
 namespace VG_Review.Migrations
 {
     [DbContext(typeof(VG_ReviewContext))]
-    partial class VG_ReviewContextModelSnapshot : ModelSnapshot
+    [Migration("20240318212428_adjustReviewModel")]
+    partial class adjustReviewModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

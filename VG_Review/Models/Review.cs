@@ -16,7 +16,7 @@ namespace VG_Review.Models
         public DateTime DateTime { get; set; }
 
         [Required(ErrorMessage = "Please select game rating")]
-        public int Rating { get; set; }
+        public int? Rating { get; set; }
 
         public int GameId { get; set; }
         public Game Game { get; set; }
