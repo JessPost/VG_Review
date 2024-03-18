@@ -6,7 +6,7 @@ Welcome to Jessica and Austin's project! This app, written in C# and utilizing t
 
 ### Contributions
 
-- **Jessica**: Focused on CRUD functionality, Bootstrap integration for the UI, and Azure hosting.
+- **Jessica**: Focused on CRUD functionality, Bootstrap integration for the UI, implemented search functionality, and Azure hosting.
 - **Austin**: Worked on implementing Identity for user authentication, managing name display across the app, and drafting this README.
 
 ## Getting Started
