@@ -1,22 +1,3 @@
-**VideoGame-Review-App**
-
-Description:
-
-Welcome to Jessica and Austin's project! This is an App written in C# utilizing the ASP.NET framework. It allows users to quickly and easily add, delete, and update reviews of video games. This project is deployed to Azure and can found at (https://gamesrus.azurewebsites.net/) We utilzed ASP.NET Core Identity to require users to create an account and login in order to update the list of games and/or the reivews for each of these games.
-
-The breakdown of work for this project was:
-
-Jessica: 
-CRUD, functionality, bootstrap, UI, Azure Hosting
-Austin:
-Identity, Name Display, Read.me, GitHub
-
-Instructions:
-First create an account and then login. Navigate to the games list and search for the game you're looking to review. If the game is not found in the list, feel free to add it yourself! When you've found/added the game you would like to review, navigate to the "See Game Reviews" section. At the bottom of the page you you can click on the "Review This Game". Include a title to your review, your review itself, and the 1-5 star rating you give this game. Click the add review game button and you're all done!
-
-
-
-
 # VideoGame-Review-App
 
 ## Description
@@ -37,7 +18,7 @@ Welcome to Jessica and Austin's project! This app, written in C# and utilizing t
 
 ### Instructions
 
-1. **Create an Account**: Visit the [registration page](https://gamesrus.azurewebsites.net/register) to sign up.
+1. **Create an Account**: Visit the [registration page]([https://gamesrus.azurewebsites.net/register](https://gamesrus.azurewebsites.net/Identity/Account/Register)) to sign up.
 2. **Log In**: Once your account is set up, log in to access the full features.
 3. **Navigating the App**:
    - To review a game, navigate to the games list and search for the game you're interested in.
