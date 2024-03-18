@@ -43,5 +43,5 @@ We warmly welcome contributions from the community. If you're interested in enha
 
 Should you have any questions or suggestions, feel free to reach out to us:
 
-- Jessica -
+- Jessica - [jpost83@yahoo.com](mailto:jpost83@yahoo.com)
 - Austin - [austinjmusic@gmail.com](mailto:austinjmusic@gmail.com)
