@@ -18,7 +18,7 @@ Welcome to Jessica and Austin's project! This app, written in C# and utilizing t
 
 ### Instructions
 
-1. **Create an Account**: Visit the [registration page]([https://gamesrus.azurewebsites.net/register](https://gamesrus.azurewebsites.net/Identity/Account/Register)) to sign up.
+1. **Create an Account**: Visit the [registration page](https://gamesrus.azurewebsites.net/Identity/Account/Register) to sign up.
 2. **Log In**: Once your account is set up, log in to access the full features.
 3. **Navigating the App**:
    - To review a game, navigate to the games list and search for the game you're interested in.
